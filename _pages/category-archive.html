@@ -1,0 +1,12 @@
+---
+layout: archive
+permalink: /categories/
+title: Categories
+author_profile: true
+---
+
+{% include group-by-array collection=site.posts field="categories" %}
+
+{% for category in group_names %}
+  <a href="{{ category | slugify | prepend: site.category_archive.path | absolute_url }}" class="page__taxonomy-item">{{ category }}</a>
+{% endfor %}
